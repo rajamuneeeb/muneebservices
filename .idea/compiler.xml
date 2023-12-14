@@ -10,9 +10,11 @@
         <module name="fraud" />
         <module name="erueka-server" />
         <module name="customer" />
+        <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="test" target="17" />
       <module name="zipkin-server" target="17" />
     </bytecodeTargetLevel>
   </component>

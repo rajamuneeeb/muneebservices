@@ -10,3 +10,11 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+logging:
+  file:
+    path: /home/muneeb/log
+    name: eureka-server.log
+  level:
+    root: info
+    eureka : info
+

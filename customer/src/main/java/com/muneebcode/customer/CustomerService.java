@@ -25,4 +25,8 @@ public class CustomerService {
         if (fraudCheckResponse.isFraudster()) throw new IllegalStateException("fraudster");
 
     }
+
+    public Boolean existById(Integer customerId) {
+        return customerRepository.existsById(customerId);
+    }
 }
