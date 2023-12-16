@@ -1,0 +1,51 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: OrderApplication
+  zipkin:
+    base-url: http://localhost:9411
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: OrderDb
+      auto-index-creation: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: rajamuneeb127@gmail.com
+    password: 'lecdavcjzzxmogsr'
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    
+
+logging:
+  file:
+    name: mongod.log
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: INFO
+    org.springframework.mail: debug
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+email:
+  smtp-server: smtp.gmail.com
+  port : 587
+  username: rajamuneeb127@gmail.com
+  password: 'lecdavcjzzxmogsr'
+

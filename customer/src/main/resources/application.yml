@@ -18,6 +18,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  batch:
+    job:
+      enabled: false
+    jdbc:
+      initialize-schema: always
+
 
 eureka:
   client:
