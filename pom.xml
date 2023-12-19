@@ -17,7 +17,6 @@
         <module>fraud</module>
         <module>erueka-server</module>
         <module>order</module>
-        <module>test</module>
     </modules>
 
     <properties>

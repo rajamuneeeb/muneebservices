@@ -1,15 +1,11 @@
 package com.muneebcode.customer;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
+import lombok.*;
+
+import javax.persistence.*;
+
 @Data
-@Builder
+@Builder(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -21,4 +17,6 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
+    @Column(name = "email_sent", nullable = false, columnDefinition = "int default 0")
+    private int emailSent;
 }

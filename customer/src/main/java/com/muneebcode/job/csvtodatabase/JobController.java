@@ -1,4 +1,4 @@
-package com.muneebcode.job;
+package com.muneebcode.job.csvtodatabase;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,14 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class JobController {
     private final JobLauncher jobLauncher;
-    private final Job csvToDatabaseJob;
+
+    private final Job bulkEmailSendingJob;
 
     @GetMapping
     public void launchJob() {
         log.info("Job is launching");
         JobParameters jobParameters = new JobParametersBuilder().addParameter("TimeStamp", new JobParameter(System.currentTimeMillis())).toJobParameters();
         try {
-            JobExecution jobExecution = jobLauncher.run(csvToDatabaseJob, jobParameters);
+            JobExecution jobExecution = jobLauncher.run(bulkEmailSendingJob, jobParameters);
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException |
                  JobParametersInvalidException e) {
             log.info("Exception Occured Here :");

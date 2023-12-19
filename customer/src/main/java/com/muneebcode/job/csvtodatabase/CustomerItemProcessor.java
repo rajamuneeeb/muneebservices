@@ -1,4 +1,4 @@
-package com.muneebcode.job;
+package com.muneebcode.job.csvtodatabase;
 
 import com.muneebcode.customer.Customer;
 import lombok.extern.slf4j.Slf4j;

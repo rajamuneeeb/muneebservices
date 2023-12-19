@@ -1,4 +1,4 @@
-package com.muneebcode.job;
+package com.muneebcode.job.email;
 
 import com.muneebcode.customer.Customer;
 import com.muneebcode.customer.CustomerRepository;
@@ -13,13 +13,15 @@ import java.util.List;
 @Slf4j
 @Component
 @AllArgsConstructor
-public class CustomerRepositoryItemWriter implements ItemWriter<Customer> {
+public class EmailSendingWriter implements ItemWriter<Customer> {
     private final CustomerRepository customerRepository;
+
 
     @Override
     public void write(@NonNull List<? extends Customer> list) throws Exception {
-        log.info("Writing Customer into db list size {}", list.size());
+        log.info("Write Customer in Db list size {}" , list.size());
         customerRepository.saveAll(list);
+
 
     }
 }
